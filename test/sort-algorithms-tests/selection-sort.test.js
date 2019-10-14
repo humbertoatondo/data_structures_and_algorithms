@@ -1,7 +1,8 @@
-const expect = require("chai").expect;
-const app = require("../Sort-Algorithms/bubble-sort");
+const chai = require("chai");
+const expect = chai.expect;
+const app = require("../../Sort-Algorithms/selection-sort");
 
-describe("Bubble Sort", function(){
+describe("Selection Sort Algorithm", function(){
 
     it("Sort Integers", function() {
         expect(app.sort([7,2,5,8,5,3,1])).to.eql([1,2,3,5,5,7,8]);

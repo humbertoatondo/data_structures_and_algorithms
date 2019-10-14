@@ -1,20 +1,19 @@
 /**
- * Sorts arr with Bubble Sort algorithm
+ * Sorts arr with Selection Sort algorithm
  * 
- * @param {[Any]} arr 
+ * @param {[Any]} arr
  * @returns {[Any]} sorted arr
  */
-function bubbleSort(arr) {
-    var noSwaps;
+function selectionSort(arr) {
+    var minIndex;
     for(i = 0; i < arr.length; i++) {
-        noSwaps = true;
-        for(j = 1; j < arr.length - i; j++) {
-            if(arr[j-1] > arr[j]) {
-                swap(arr, j-1, j);
-                noSwaps = false;
+        minIndex = i;
+        for(j = i; j < arr.length; j++) {
+            if(arr[j] < arr[minIndex]) {
+                minIndex = j;
             }
         }
-        if(noSwaps) break;
+        swap(arr, i, minIndex);
     }
     return arr;
 }
@@ -32,4 +31,4 @@ function swap(arr, index1, index2) {
     arr[index2] = tmp;
 }
 
-module.exports.sort = bubbleSort;
+module.exports.sort = selectionSort;
