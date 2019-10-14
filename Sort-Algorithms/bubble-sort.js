@@ -19,6 +19,8 @@ function bubbleSort(arr) {
     return arr;
 }
 
+
+
 /**
  * Swaps values between arr[index1] and arr[index2]
  * 
