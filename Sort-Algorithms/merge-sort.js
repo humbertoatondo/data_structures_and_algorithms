@@ -1,14 +1,14 @@
 /**
- * Sorts arr with Merge Sort algorithm
+ * Sorts arr with Merge Sort algorithm.
  * 
  * @param {[Any]} arr 
  * @returns {[Any]} sorted arr
  */
 function mergeSort(arr) {
     if(arr.length > 1) {
-        var middle = arr.length / 2;
-        var leftArr = arr.slice(0, middle);
-        var rightArr = arr.slice(middle, arr.length);
+        let middle = arr.length / 2;
+        let leftArr = arr.slice(0, middle);
+        let rightArr = arr.slice(middle, arr.length);
         mergeSort(leftArr);
         mergeSort(rightArr);
         mergeFor(arr, leftArr, rightArr);
@@ -18,7 +18,7 @@ function mergeSort(arr) {
 
 /**
  * Merges leftArr and rightArr into arr
- * in a sorted fashion using for loop
+ * in a sorted fashion using for loop.
  * 
  * @param {[Any]} arr 
  * @param {[Any]} leftArr 
@@ -70,7 +70,7 @@ function mergeFor(arr, leftArr, rightArr) {
 
 /**
  * Merges leftArr and rightArr into arr
- * in a sorted fashion using while loop
+ * in a sorted fashion using while loop.
  * 
  * @param {[Any]} arr 
  * @param {[Any]} leftArr 
@@ -102,7 +102,7 @@ function mergeWhile(arr, leftArr, rightArr) {
         index++;
     }
     /**
-     * Append the remainign values
+     * Append the remaining values
      * in leftArr into arr.
      */
     while(leftIndex < leftArr.length) {
