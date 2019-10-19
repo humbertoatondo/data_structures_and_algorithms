@@ -35,27 +35,27 @@ describe("Quick Sort Algorithm", function(){
 
     describe("Pivot Function", function() {
         it("Pivot with Integers", function() {
-            expect(app.pivot([7,2,5,8,5,3,1], 0, 7)).to.eql(5);
-            expect(app.pivot([5,2,6,9,4,2,12], 0, 7)).to.eql(3);
-            expect(app.pivot([6,8,3,2,5,1,1,9,11,4], 0, 10)).to.eql(6);
+            expect(app.pivot([7,2,5,8,5,3,1], 0, 6)).to.eql(5);
+            expect(app.pivot([5,2,6,9,4,2,12], 0, 6)).to.eql(5);
+            expect(app.pivot([6,8,3,2,5,1,1,9,11,4], 0, 9)).to.eql(5);
         });
 
         it("Pivot with Floats", function() {
-            expect(app.pivot([7.4, 2.1 ,5.9, 8.0, 5.5, 3.1, 1.9], 0, 7)).to.eql(5);
-            expect(app.pivot([5.7, 2.4, 6.0, 9.9, 4.5, 2.8, 12.1], 0, 7)).to.eql(3);
-            expect(app.pivot([6.2, 8.5, 3.1, 2.7, 5.3, 1.2, 1.1, 9.0, 11.4, 4.0], 0, 10)).to.eql(6);
+            expect(app.pivot([7.4, 2.1 ,5.9, 8.0, 5.5, 3.1, 1.9], 0, 6)).to.eql(5);
+            expect(app.pivot([5.7, 2.4, 6.0, 9.9, 4.5, 2.8, 12.1], 0, 6)).to.eql(5);
+            expect(app.pivot([6.2, 8.5, 3.1, 2.7, 5.3, 1.2, 1.1, 9.0, 11.4, 4.0], 0, 9)).to.eql(5);
         });
 
         it("Pivot with Characters", function() {
-            expect(app.pivot(["e","b","d","a","c","f"], 0, 6)).to.eql(4);
-            expect(app.pivot(["m","l","g","c","b","a"], 0, 6)).to.eql(5);
-            expect(app.pivot(["g","p","m","l","c","b","a"], 0, 7)).to.eql(3);
+            expect(app.pivot(["e","b","d","a","c","f"], 0, 5)).to.eql(4);
+            expect(app.pivot(["m","l","g","c","b","a"], 0, 5)).to.eql(3);
+            expect(app.pivot(["g","p","m","l","c","b","a"], 0, 6)).to.eql(3);
         });
 
         it("Pivot with Strings", function() {
-            expect(app.pivot(["ear","bird","deer","apple","cat","fire"], 0, 6)).to.eql(4);
-            expect(app.pivot(["man","latex","gate","cat","bear","ancient"], 0, 6)).to.eql(5);
-            expect(app.pivot(["gravity","people","meat","late","cyber","bike","ant"], 0, 7)).to.eql(3);
+            expect(app.pivot(["ear","bird","deer","apple","cat","fire"], 0, 5)).to.eql(4);
+            expect(app.pivot(["man","latex","gate","cat","bear","ancient"], 0, 5)).to.eql(3);
+            expect(app.pivot(["gravity","people","meat","late","cyber","bike","ant"], 0, 6)).to.eql(3);
         });
     });
 
