@@ -1,23 +1,23 @@
-
 class Node {
     /**
-     * Singly Linked List Node.
+     * Doubly Linked List Node.
      * @param {Any} value 
      */
     constructor(value) {
         this.value = value;
+        this.previous = null;
         this.next = null;
     }
 }
 
-class SinglyLinkedList {
+class DoublyLinkedList {
     constructor() {
         this.head = null;
         this.tail = null;
         this.length = 0;
     }
 
-    /**
+     /**
      * Gets value of node in specified position.
      * @param {Number} position 
      * @returns value of node
@@ -50,6 +50,7 @@ class SinglyLinkedList {
         currentNode.value = value;
     }
 
+
     /**
      * Adds a new node at the end of the
      * list and increases length by 1.
@@ -61,6 +62,7 @@ class SinglyLinkedList {
             this.head = node;
             this.tail = node;
         } else {
+            node.previous = this.tail;
             this.tail.next = node;
             this.tail = node;
         }
@@ -80,6 +82,7 @@ class SinglyLinkedList {
     addAtPosition(value, position) {
         let node = new Node(value);
         if(this.length <= position) {
+            node.previous = this.tail;
             this.tail.next = node;
             this.tail = node;
         } else {
@@ -89,9 +92,11 @@ class SinglyLinkedList {
                 position--;
             }
             node.next = currentNode.next;
+            node.previous = currentNode
+            currentNode.next.previous = node;
             currentNode.next = node;
         }
-        this.length++;
+        this.length++
     }
 
     /**
@@ -106,7 +111,7 @@ class SinglyLinkedList {
         this.length++;
     }
 
-    /**
+     /**
      * Removes the last node of the list
      * and decreases length by 1.
      * @returns value of the removed node
@@ -129,28 +134,13 @@ class SinglyLinkedList {
      * @returns value of the removed node
      */
     removeFirst() {
-        let currentNode = this.head;
+        let currentNode = this.head.next;
         let removedNode = this.head;
-        currentNode = currentNode.next;
+        currentNode.previous = null;
         this.head.next = null;
         this.head = currentNode;
         this.length--;
         return removedNode.value;
-    }
-
-    /**
-     * Reverses tha linked list.
-     */
-    reverse() {
-        var currentNode = this.head;
-        var previousNode = null;
-        for(var i = 0; i < this.length; i++) {
-            let nextNode = currentNode.next;
-            currentNode.next = previousNode;
-            previousNode = currentNode
-            currentNode = nextNode;
-        }
-        [this.head, this.tail] = [this.tail, this.head];
     }
 
     /**
@@ -162,7 +152,7 @@ class SinglyLinkedList {
         this.tail = null;
         this.length = 0;
     }
-    
+
     /**
      * Returns an array with all list values in order.
      * @returns array of values
@@ -178,5 +168,5 @@ class SinglyLinkedList {
     }
 }
 
-module.exports.LinkedList = SinglyLinkedList;
+module.exports.LinkedList = DoublyLinkedList;
 module.exports.Node = Node;

@@ -1,8 +1,8 @@
 const chai = require("chai");
 const expect = chai.expect;
-const app = require("../../../data-structures/linked-lists/singly-linked-list");
+const app = require("../../../data-structures/linked-lists/doubly-linked-list");
 
-describe("Singly Linked List", function() {
+describe("Doubly Linked List", function() {
 
     const linkedList = new app.LinkedList();
 
@@ -17,7 +17,6 @@ describe("Singly Linked List", function() {
     });
 
     describe("Add Methods", function() {
-
         it("add", function() {
             expect(linkedList.toArray()).to.eql(["Hello", 42, 3.2]);
         });
@@ -63,12 +62,5 @@ describe("Singly Linked List", function() {
             expect(linkedList.get(1)).to.eql("set val");
         });
     });
-
-    describe("Reverse Method", function() {
-        it("reverse", function() {
-            linkedList.reverse();
-            expect(linkedList.toArray()).to.eql([3.2, 42, "Hello"]);
-        });
-    })
 
 });
