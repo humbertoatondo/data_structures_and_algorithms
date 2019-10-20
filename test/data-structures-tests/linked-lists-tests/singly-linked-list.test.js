@@ -6,13 +6,13 @@ describe("Singly Linked List", function() {
 
     const linkedList = new app.LinkedList();
 
-    beforeEach(function() {
+    this.beforeEach(function() {
         linkedList.add("Hello");
         linkedList.add(42);
         linkedList.add(3.2);
     });
 
-    afterEach(function() {
+    this.afterEach(function() {
         linkedList.emptyList();
     });
 

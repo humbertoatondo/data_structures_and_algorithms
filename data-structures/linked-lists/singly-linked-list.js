@@ -179,4 +179,3 @@ class SinglyLinkedList {
 }
 
 module.exports.LinkedList = SinglyLinkedList;
-module.exports.Node = Node;
