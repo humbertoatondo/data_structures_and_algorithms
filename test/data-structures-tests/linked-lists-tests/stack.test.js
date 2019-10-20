@@ -6,6 +6,7 @@ describe("Stack", function() {
 
     const stack = new app.Stack();
     var node1, node2, node3;
+    
     this.beforeEach(function() {
         node1 = stack.push(1);
         node2 = stack.push("hello");
@@ -24,7 +25,11 @@ describe("Stack", function() {
         it("pop", function() {
             expect(stack.pop().value).to.eql(true);
             expect(stack.toArray()).to.eql(["hello", 1]);
-            
+            stack.pop();
+            stack.pop();
+            expect(stack.toArray()).to.eql([]);
+            stack.push("test");
+            expect(stack.toArray()).to.eql(["test"]);
         });
 
         it("peek",function() {

@@ -1,7 +1,6 @@
-
 class Node {
     /**
-     * Stack Node.
+     * Queue Node
      * @param {Any} value 
      */
     constructor(value) {
@@ -10,7 +9,7 @@ class Node {
     }
 }
 
-class Stack {
+class Queue {
     constructor() {
         this.first = null;
         this.last = null;
@@ -22,11 +21,19 @@ class Stack {
      * @param {Any} value 
      * @returns {Node} inserted node
      */
-    push(value) {
+    enqueue(value) {
         let node = new Node(value);
-        if(!this.first) this.last = node;
-        node.next = this.first;
-        this.first = node;
+        if(!this.first) {
+            this.first = node;
+            this.last = node;
+        } else {
+            let currentNode = this.first;
+            while(currentNode.next != null) {
+                currentNode = currentNode.next;
+            }
+            currentNode.next = node;
+            this.last = node;
+        }
         this.size++;
         return node;
     }
@@ -35,7 +42,7 @@ class Stack {
      * Removes the first element from the stack.
      * @returns {Node} removed node
      */
-    pop() {
+    dequeue() {
         let removedNode = this.first;
         this.first = removedNode.next;
         removedNode.next = null;
@@ -111,5 +118,5 @@ class Stack {
     }
 }
 
-module.exports.Stack = Stack;
+module.exports.Queue = Queue;
 module.exports.Node = Node;
