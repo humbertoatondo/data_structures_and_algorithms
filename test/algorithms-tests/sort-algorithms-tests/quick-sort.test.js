@@ -1,6 +1,6 @@
 const chai = require("chai");
 const expect = chai.expect;
-const app = require("../../Sort-Algorithms/quick-sort");
+const app = require("../../../algorithms/sort-algorithms/quick-sort");
 
 describe("Quick Sort Algorithm", function(){
     

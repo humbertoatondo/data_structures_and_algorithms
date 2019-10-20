@@ -1,9 +1,9 @@
 const chai = require("chai");
 const expect = chai.expect;
-const app = require("../../Sort-Algorithms/selection-sort");
+const app = require("../../../algorithms/sort-algorithms/insertion-sort");
 
-describe("Selection Sort Algorithm", function(){
-    
+describe("Insertion Sort Algorithm", function(){
+
     describe("Sort Function", function(){
 
         it("Sort Integers", function() {

@@ -1,6 +1,6 @@
 const chai = require("chai");
 const expect = chai.expect;
-const app = require("../../Sort-Algorithms/bubble-sort");
+const app = require("../../../algorithms/sort-algorithms/bubble-sort");
 
 describe("Bubble Sort Algorithm", function(){
 

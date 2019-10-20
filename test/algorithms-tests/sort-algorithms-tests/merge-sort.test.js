@@ -1,6 +1,6 @@
 const chai = require("chai");
 const expect = chai.expect;
-const app = require("../../Sort-Algorithms/merge-sort");
+const app = require("../../../algorithms/sort-algorithms/merge-sort");
 
 describe("Merge Sort Algorithm", function(){
 

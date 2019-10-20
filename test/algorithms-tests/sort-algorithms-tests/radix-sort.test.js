@@ -1,6 +1,6 @@
 const chai = require("chai");
 const expect = chai.expect;
-const app = require("../../Sort-Algorithms/radix-sort");
+const app = require("../../../algorithms/sort-algorithms/radix-sort");
 
 describe("Radix Sort Algorithm", function() {
     
