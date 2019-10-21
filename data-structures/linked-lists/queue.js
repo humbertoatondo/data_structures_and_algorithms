@@ -27,11 +27,7 @@ class Queue {
             this.first = node;
             this.last = node;
         } else {
-            let currentNode = this.first;
-            while(currentNode.next != null) {
-                currentNode = currentNode.next;
-            }
-            currentNode.next = node;
+            this.last.next = node;
             this.last = node;
         }
         this.size++;
